@@ -45,7 +45,9 @@ export default {
   },
   data() {
     return {
-      isDone: this.done,
+      isDone() {
+        return this.done; //making isDone a computed property.
+      },
       isEditing: false,
     };
   },
