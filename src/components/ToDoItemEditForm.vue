@@ -4,9 +4,10 @@
       <label class="edit-label">Edit Name for &quot;{{ label }}&quot;</label>
       <input
         :id="id"
+        ref="labelInput"
         type="text"
         autocomplete="off"
-        v-model.lazy.trim="newLabel"
+        v-model.lazy.trim="newName"
       />
     </div>
     <div class="btn-group">
@@ -34,6 +35,10 @@ export default {
       type: String,
       required: true,
     },
+  },
+  mounted() {
+   const labelInputRef = this.$refs.labelInput;
+   labelInputRef.focus();
   },
   data() {
     return {
